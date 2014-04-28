@@ -7,6 +7,7 @@ class Point{
   float y;
   float size;
   color col;
+  float alpha;
   
   /****************/
   /* Constructors */
@@ -62,6 +63,11 @@ class Point{
   void setColor(color _col){
     col = _col;
   }
+  
+  void setColor(color _col, float _alpha){
+    col = _col;
+    alpha = _alpha;
+  }
   /***********/
   /* Getters */
   /***********/
@@ -86,7 +92,7 @@ class Point{
     
     ellipseMode(CENTER);
     noStroke();
-    fill(col);
+    fill(col, alpha);
     ellipse(x,y,size,size);
     
     popMatrix();
